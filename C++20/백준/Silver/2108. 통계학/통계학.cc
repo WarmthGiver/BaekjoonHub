@@ -13,20 +13,20 @@ int main()
 	cin.tie(0);
 
 	cout.tie(0);
-    
-    int numbersCount;
-    
-    int numbers[500001];
 
-    int numbersSum = 0;
+	int numbers[500001];
+	
+	int numbersSum = 0;
+	
+	int numberCounts[8001] = { 0, };
 
-    int numberCounts[8001] = { 0, };
+	int mostNumberCount = 0;
 
-    int mostNumberCount = 0;
+	int firstMostNumber;
 
-    int firstMostNumber;
+	int secondMostNumber;
 
-    int secondMostNumber;
+	int numbersCount;
 
 	cin >> numbersCount;
 
