@@ -13,13 +13,5 @@ int main()
 		X -= a * b;
 	}
 
-	if (X)
-	{
-		printf("No");
-	}
-
-	else
-	{
-		printf("Yes");
-	}
+	printf(X ? "No" : "Yes");
 }
