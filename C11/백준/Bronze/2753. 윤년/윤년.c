@@ -2,9 +2,9 @@
 
 int main()
 {
-	int year;
+	int y;
 
-	scanf("%d", &year);
+	scanf("%d", &y);
 
-	printf("%d", year % 4 ? 0 : year % 100 ? 1 : year % 400 ? 0 : 1);
+	printf("%d", !(y % 100 ? y % 4 : y % 400));
 }
