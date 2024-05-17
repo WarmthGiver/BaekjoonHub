@@ -25,7 +25,7 @@ int main()
 	{
 		d = a > b ? a : b;
 
-		d = (d > c ? d : c) * 100;
+		d = (c > d ? c : d) * 100;
 	}
 
 	printf("%d", d);
