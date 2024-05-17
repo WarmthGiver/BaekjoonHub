@@ -23,7 +23,9 @@ int main()
 
 	else
 	{
-		d = (a > b ? (a > c ? a : c) : (b > c ? b : c)) * 100;
+		d = a > b ? a : b;
+
+		d = (d > c ? d : c) * 100;
 	}
 
 	printf("%d", d);
