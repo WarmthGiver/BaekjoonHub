@@ -2,9 +2,9 @@
 
 int main()
 {
-	int y;
+	int n;
 
-	scanf("%d", &y);
+	scanf("%d", &n);
 
-	printf("%d", !(y % 100 ? y % 4 : y % 400));
+	printf("%d", !(n % 100 ? n % 4 : n % 400));
 }
