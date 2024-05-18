@@ -1,1 +1,1 @@
-i,n,x,m;main(){while(++i<= 9){scanf("%d",&n);if(n>x){x=n;m=i;}}printf("%d\n%d",x,m);}
+i,n,x,m;main(){while(++i<=9){scanf("%d",&n);if(n>x){x=n;m=i;}}printf("%d\n%d",x,m);}
