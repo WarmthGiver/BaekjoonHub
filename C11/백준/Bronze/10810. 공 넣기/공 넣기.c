@@ -1,1 +1,1 @@
-N,M,i,j,k,baskets[101];main(){scanf("%d%d",&N,&M);while(M--){scanf("%d%d%d",&i,&j,&k);while(i<=j)baskets[i++]=k;}for(i=0;i++<N;)printf("%d ",baskets[i]);}
+N,M,i,j,k,b[101];main(){scanf("%d%d",&N,&M);while(M--){scanf("%d%d%d",&i,&j,&k);while(i<=j)b[i++]=k;}for(i=0;i++<N;)printf("%d ",b[i]);}
