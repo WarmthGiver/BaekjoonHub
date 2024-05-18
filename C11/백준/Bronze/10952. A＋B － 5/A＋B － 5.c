@@ -4,10 +4,8 @@ int main()
 {
 	int A, B;
 
-	while (scanf("%d %d", &A, &B))
+	while (scanf("%d %d", &A, &B), A && B)
 	{
-		if (A && B) printf("%d\n", A + B);
-
-		else break;
+		printf("%d\n", A + B);
 	}
 }
