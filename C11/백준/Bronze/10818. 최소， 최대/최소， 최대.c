@@ -2,7 +2,7 @@
 
 int main()
 {
-	int N, n, min = 1000000, max = -1000000;
+	int N, n, min = 1000000, max = -min;
 
 	scanf("%d", &N);
 
