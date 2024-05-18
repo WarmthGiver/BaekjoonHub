@@ -4,7 +4,7 @@ int i, n, max, num;
 
 int main()
 {
-	for (i = 1; i <= 9; ++i)
+	while (++i <= 9)
 	{
 		scanf("%d", &n);
 
@@ -16,5 +16,5 @@ int main()
 		}
 	}
 
-	printf("%d %d", max, num);
+	printf("%d\n%d", max, num);
 }
