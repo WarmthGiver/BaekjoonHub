@@ -1,1 +1,1 @@
-i,j,n,a[31];main(){while(i++<28){scanf("%d",&n);++a[n];}while(j++<30)if(!a[j])printf("%d ",j);}
+i,j,n,s[31];main(){while(i++<28){scanf("%d",&n);++s[n];}while(j++<30)if(!s[j])printf("%d ",j);}
