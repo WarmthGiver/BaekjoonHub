@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int N, i, score, scores[1000];
+int N, i, score;
 
 float max, sum;
 
@@ -8,11 +8,11 @@ int main()
 {
 	scanf("%d", &N);
 
-	while (i < N)
+	while (i++ < N)
 	{
 		scanf("%d", &score);
 
-		scores[i++] = score;
+		sum += score;
 
 		if (score > max)
 		{
@@ -20,12 +20,5 @@ int main()
 		}
 	}
 
-	max = 1 / max * 100;
-
-	while (i-- > 0)
-	{
-		sum += scores[i] * max;
-	}
-
-	printf("%f", sum / N);
+	printf("%f", sum / N / max * 100);
 }
