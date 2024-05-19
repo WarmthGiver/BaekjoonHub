@@ -1,8 +1,6 @@
 #include <stdio.h>
 
-int N, i, score;
-
-float max, sum;
+int N, i, score, max, sum;
 
 int main()
 {
@@ -20,5 +18,5 @@ int main()
 		}
 	}
 
-	printf("%f", sum / N / max * 100);
+	printf("%f", 100. * sum / N / max);
 }
