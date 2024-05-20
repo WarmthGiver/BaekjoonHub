@@ -18,7 +18,7 @@ int main()
 
 	while (i--)
 	{
-		alphabets[(int)S[i] - 97] = i + 1;
+		alphabets[S[i] - 97] = i + 1;
 	}
 
 	while (i++ < 25)
