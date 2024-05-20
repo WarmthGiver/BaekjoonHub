@@ -6,9 +6,7 @@ int main()
 
 	int i;
 
-	scanf("%s", S);
+	scanf("%s %d", S, &i);
 
-	scanf("%d", &i);
-
-	printf("%c", S[i - 1]);
+	putchar(S[i - 1]);
 }
