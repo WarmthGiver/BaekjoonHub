@@ -2,15 +2,25 @@
 
 #include <string>
 
-using namespace std;
-
 int main()
 {
-	string S;
+	std::ios_base::sync_with_stdio(0);
 
-	getline(cin, S);
+	std::cin.tie(0);
+
+	std::string S;
+
+	getline(std::cin, S);
 
 	int count = 1;
+
+	for (char c : S)
+	{
+		if (c == ' ')
+		{
+			++count;
+		}
+	}
 
 	if (S.front() == ' ')
 	{
@@ -22,13 +32,5 @@ int main()
 		--count;
 	}
 
-	for (char c : S)
-	{
-		if (c == ' ')
-		{
-			++count;
-		}
-	}
-
-	cout << count;
+	std::cout << count;
 }
