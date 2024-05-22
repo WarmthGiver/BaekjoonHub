@@ -10,24 +10,9 @@ int main()
 
 	std::cin >> A >> B;
 
-	for (int i = 3; i--;)
-	{
-		if (A[i] > B[i])
-		{
-			std::reverse(A.begin(), A.end());
+	std::reverse(A.begin(), A.end());
 
-			std::cout << A;
-			
-			break;
-		}
+	std::reverse(B.begin(), B.end());
 
-		if (A[i] < B[i])
-		{
-			std::reverse(B.begin(), B.end());
-
-			std::cout << B;
-
-			break;
-		}
-	}
+	std::cout << (A > B ? A : B);
 }
