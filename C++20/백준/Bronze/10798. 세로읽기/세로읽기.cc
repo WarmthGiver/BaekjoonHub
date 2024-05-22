@@ -1,5 +1,7 @@
 #include <iostream>
 
+char words[5][16];
+
 int main()
 {
     std::ios_base::sync_with_stdio(0);
@@ -7,8 +9,6 @@ int main()
     std::cin.tie(0);
 
     int i, j;
-
-    char words[5][16] = { 0 };
 
     for (i = 0; i < 5; ++i)
     {
