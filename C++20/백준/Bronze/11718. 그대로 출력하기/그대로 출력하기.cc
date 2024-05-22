@@ -2,20 +2,22 @@
 
 #include <string>
 
+using namespace std;
+
 int main()
 {
-	std::ios_base::sync_with_stdio(0);
+	ios_base::sync_with_stdio(0);
 
-	std::cin.tie(0);
+	cin.tie(0);
 
 	int N = 100;
 
 	while (N--)
 	{
-		std::string S;
+		string S;
 
-		getline(std::cin, S);
+		getline(cin, S);
 
-		std::cout << S << '\n';
+		cout << S << '\n';
 	}
 }
