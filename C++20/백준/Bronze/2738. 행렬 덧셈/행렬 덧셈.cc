@@ -1,20 +1,22 @@
 #include <iostream>
 
+using namespace std;
+
 int main()
 {
-    std::ios_base::sync_with_stdio(0);
+    ios_base::sync_with_stdio(0);
 
-    std::cin.tie(0);
+    cin.tie(0);
 
     int N, M, i, j, A[100][100], b;
 
-    std::cin >> N >> M;
+    cin >> N >> M;
 
     for (i = N; i-- > 0;)
     {
         for (j = M; j-- > 0;)
         {
-            std::cin >> A[i][j];
+            cin >> A[i][j];
         }
     }
 
@@ -22,11 +24,11 @@ int main()
     {
         for (j = M; j-- > 0;)
         {
-            std::cin >> b;
+            cin >> b;
 
-            std::cout << A[i][j] + b << ' ';
+            cout << A[i][j] + b << ' ';
         }
 
-        std::cout << '\n';
+        cout << '\n';
     }
 }
