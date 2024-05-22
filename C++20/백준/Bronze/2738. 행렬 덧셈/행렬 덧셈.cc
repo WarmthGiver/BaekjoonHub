@@ -12,17 +12,17 @@ int main()
 
     cin >> N >> M;
 
-    for (i = N; i-- > 0;)
+    for (i = N; i--;)
     {
-        for (j = M; j-- > 0;)
+        for (j = M; j--;)
         {
             cin >> A[i][j];
         }
     }
 
-    for (i = N; i-- > 0;)
+    for (i = N; i--;)
     {
-        for (j = M; j-- > 0;)
+        for (j = M; j--;)
         {
             cin >> b;
 
