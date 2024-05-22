@@ -1,12 +1,12 @@
 #include <iostream>
 
-int N, M, i, j, A[100][100], b;
-
 int main()
 {
     std::ios_base::sync_with_stdio(0);
 
     std::cin.tie(0);
+
+    int N, M, i, j, A[100][100], b;
 
     std::cin >> N >> M;
 
