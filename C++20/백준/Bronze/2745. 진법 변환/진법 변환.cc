@@ -4,33 +4,31 @@
 
 using namespace std;
 
-string N;
-
-int B, i, d;
-
 int main()
 {
-	ios::sync_with_stdio(0);
+	cin.tie(0)->sync_with_stdio(0);
 
-	cin.tie(0);
+	string N;
+
+	int B, i, d = 0;
 
 	cin >> N >> B;
 
-	i = N.length() - 1;
+	i = N.length();
 
-	for (auto n : N)
+	for (char n : N)
 	{
-		if (n < 65)
-		{
-			n -= 48;
-		}
-
-		else
+		if (n >= 65)
 		{
 			n -= 55;
 		}
 
-		d += n * pow(B, i--);
+		else
+		{
+			n -= 48;
+		}
+
+		d += n * pow(B, --i);
 	}
 
 	cout << d;
