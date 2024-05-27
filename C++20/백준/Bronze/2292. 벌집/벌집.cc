@@ -12,9 +12,7 @@ int main()
 
 	while (room < N)
 	{
-		room += 6 * count;
-
-		++count;
+		room += 6 * count++;
 	}
 
 	cout << count;
