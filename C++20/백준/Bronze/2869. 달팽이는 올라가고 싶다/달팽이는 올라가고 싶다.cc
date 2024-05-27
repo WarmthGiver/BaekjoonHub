@@ -10,5 +10,5 @@ int main()
 
 	cin >> A >> B >> V;
 
-	cout << 1 + (V - B - 1) / (A - B);
+	cout << (V - B - 1) / (A - B) + 1;
 }
