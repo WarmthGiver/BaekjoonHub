@@ -6,24 +6,22 @@ int main()
 {
 	cin.tie(0)->sync_with_stdio(0);
 
-	int X, count = 1, i = 1;
+	int X, i = 1;
 
 	cin >> X;
 
-	while (count < X)
+	while (i < X)
 	{
-		count += ++i;
+		X -= i++;
 	}
-
-	X = count - X;
 
 	if (i & 1)
 	{
-		cout << 1 + X << '/' << i - X;
+		cout << 1 + i - X << '/' << X;
 	}
 
 	else
 	{
-		cout << i - X << '/' << 1 + X;
+		cout << X << '/' << 1 + i - X;
 	}
 }
