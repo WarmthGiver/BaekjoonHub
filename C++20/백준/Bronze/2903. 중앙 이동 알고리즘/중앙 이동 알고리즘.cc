@@ -1,7 +1,5 @@
 #include <iostream>
 
-#include <cmath>
-
 using namespace std;
 
 int main()
@@ -12,7 +10,7 @@ int main()
 
 	cin >> N;
 
-	N = 1 + pow(2, N);
+	N = 1 + (1 << N);
 
 	cout << N * N;
 }
