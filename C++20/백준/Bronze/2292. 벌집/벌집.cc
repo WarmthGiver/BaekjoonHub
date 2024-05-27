@@ -1,19 +1,2 @@
-#include <iostream>
-
-using namespace std;
-
-int main()
-{
-	cin.tie(0)->sync_with_stdio(0);
-
-	int N, room = 1, count = 1;
-
-	cin >> N;
-
-	while (room < N)
-	{
-		room += 6 * count++;
-	}
-
-	cout << count;
-}
+#import<iostream>
+main(){int N,r=1,c=1;std::cin>>N;while(r<N)r+=6*c++;std::cout<<c;}
