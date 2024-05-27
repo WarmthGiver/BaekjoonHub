@@ -6,16 +6,9 @@ int main()
 {
 	cout.tie(0)->sync_with_stdio(0);
 
-	int A, B, V, day;
+	int A, B, V;
 
 	cin >> A >> B >> V;
 
-	day = 1 + (V - A) / (A - B);
-
-	if ((V - A) % (A - B))
-	{
-		++day;
-	}
-
-	cout << day;
+	cout << 1 + (V - B - 1) / (A - B);
 }
