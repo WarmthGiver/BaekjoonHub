@@ -2,17 +2,17 @@
 
 using namespace std;
 
+int X, i;
+
 int main()
 {
 	cin.tie(0)->sync_with_stdio(0);
 
-	int X, i = 1;
-
 	cin >> X;
 
-	while (i < X)
+	while (++i < X)
 	{
-		X -= i++;
+		X -= i;
 	}
 
 	if (i & 1)
