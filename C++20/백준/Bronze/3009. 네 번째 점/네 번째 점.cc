@@ -1,13 +1,13 @@
 #include <iostream>
 
+int c[6], i;
+
 int main()
 {
-	int c[6], i = 6;
-
-	while (i--)
+	while (i < 6)
 	{
-		std::cin >> c[i];
+		std::cin >> c[i++];
 	}
 
-	std::cout << (c[1] ^ c[3] ^ c[5]) << ' ' << (c[0] ^ c[2] ^ c[4]);
+	std::cout << (c[0] ^ c[2] ^ c[4]) << ' ' << (c[1] ^ c[3] ^ c[5]);
 }
