@@ -1,25 +1,31 @@
 #include<iostream>
 
+using namespace std;
+
 int main()
 {
+	cin.tie(0)->sync_with_stdio(0);
+
 	int N, x, y, xMin, yMin, xMax, yMax;
 
-	xMin = yMin = 10000;
+	cin >> N;
 
-	xMax = yMax = -10000;
+	cin >> xMin >> yMin;
 
-	std::cin >> N;
+	xMax = xMin;
 
-	while (N--)
+	yMax = yMin;
+
+	while (--N)
 	{
-		std::cin >> x >> y;
+		cin >> x >> y;
 
 		if (x < xMin)
 		{
 			xMin = x;
 		}
 
-		if (x > xMax)
+		else if (x > xMax)
 		{
 			xMax = x;
 		}
@@ -29,11 +35,11 @@ int main()
 			yMin = y;
 		}
 
-		if (y > yMax)
+		else if (y > yMax)
 		{
 			yMax = y;
 		}
 	}
 
-	std::cout << (xMax - xMin) * (yMax - yMin);
+	cout << (xMax - xMin) * (yMax - yMin);
 }
