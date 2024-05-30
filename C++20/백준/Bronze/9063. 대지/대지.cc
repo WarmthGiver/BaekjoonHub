@@ -4,15 +4,13 @@ int main()
 {
 	int N, x, y, xMin, yMin, xMax, yMax;
 
+	xMin = yMin = 10000;
+
+	xMax = yMax = -10000;
+
 	std::cin >> N;
 
-	std::cin >> x >> y;
-
-	xMax = xMin = x;
-
-	yMax = yMin = y;
-
-	while (--N)
+	while (N--)
 	{
 		std::cin >> x >> y;
 
@@ -21,7 +19,7 @@ int main()
 			xMin = x;
 		}
 
-		else if (x > xMax)
+		if (x > xMax)
 		{
 			xMax = x;
 		}
@@ -31,7 +29,7 @@ int main()
 			yMin = y;
 		}
 
-		else if (y > yMax)
+		if (y > yMax)
 		{
 			yMax = y;
 		}
