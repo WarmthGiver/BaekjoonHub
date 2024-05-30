@@ -6,5 +6,5 @@ int main()
 
 	std::cin >> n;
 
-	std::cout << (n << 2);
+	std::cout << n * 4;
 }
