@@ -1,27 +1,21 @@
-#include<iostream>
+#include <iostream>
+
+#include <cmath>
 
 int main()
 {
-	std::cin.tie(0)->sync_with_stdio(0);
-
-	int a, b, c;
+	int a, b, c, max, sum;
 
 	std::cin >> a >> b >> c;
 
-	if (a >= b + c)
+	max = std::max({ a, b, c });
+
+	sum = a + b + c;
+
+	if (max * 2 >= sum)
 	{
-		a = b + c - 1;
+		sum = (sum - max) * 2 - 1;
 	}
 
-	else if (b >= c + a)
-	{
-		b = c + a - 1;
-	}
-
-	else if (c >= a + b)
-	{
-		c = a + b - 1;
-	}
-
-	std::cout << a + b + c;
+	std::cout << sum;
 }
