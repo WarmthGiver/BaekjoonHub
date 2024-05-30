@@ -2,9 +2,12 @@
 
 int main()
 {
-	int x0, y0, x1, y1, x2, y2;
+	int c[6], i = 6;
 
-	std::cin >> x0 >> y0 >> x1 >> y1 >> x2 >> y2;
+	while (i--)
+	{
+		std::cin >> c[i];
+	}
 
-	std::cout << (x0 ^ x1 ^ x2) << ' ' << (y0 ^ y1 ^ y2);
+	std::cout << (c[1] ^ c[3] ^ c[5]) << ' ' << (c[0] ^ c[2] ^ c[4]);
 }
