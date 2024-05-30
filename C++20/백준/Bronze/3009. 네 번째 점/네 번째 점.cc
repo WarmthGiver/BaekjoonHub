@@ -1,2 +1,2 @@
 #import<iostream>
-int c[6],i;main(){while(i<6)std::cin >> c[i++];std::cout<<(c[0]^c[2]^c[4])<<' '<<(c[1]^c[3]^c[5]);}
+int a,b,x,y;main(){for(;std::cin>>a>>b;x^=a)y^=b;std::cout<<x<<' '<<y;}
