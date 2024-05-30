@@ -1,24 +1,20 @@
-#include<iostream>
-
-using namespace std;
+#include <iostream>
 
 int main()
 {
-	cin.tie(0)->sync_with_stdio(0);
+	std::cin.tie(0)->sync_with_stdio(0);
 
 	int N, x, y, xMin, yMin, xMax, yMax;
 
-	cin >> N;
+	std::cin >> N >> x >> y;
 
-	cin >> xMin >> yMin;
+	xMax = xMin = x;
 
-	xMax = xMin;
-
-	yMax = yMin;
+	yMax = yMin = y;
 
 	while (--N)
 	{
-		cin >> x >> y;
+		std::cin >> x >> y;
 
 		if (x < xMin)
 		{
@@ -41,5 +37,5 @@ int main()
 		}
 	}
 
-	cout << (xMax - xMin) * (yMax - yMin);
+	std::cout << (xMax - xMin) * (yMax - yMin);
 }
