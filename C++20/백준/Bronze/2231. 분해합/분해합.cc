@@ -1,12 +1,10 @@
 #include <iostream>
 
-using namespace std;
-
 int main()
 {
 	int N, ctor{}, digit, sum;
 
-	cin >> N ;
+	std::cin >> N;
 
 	while (++ctor < N)
 	{
@@ -21,11 +19,11 @@ int main()
 
 		if (sum == N)
 		{
-			cout << ctor;
+			std::cout << ctor;
 
 			return 0;
 		}
 	}
 
-	cout << 0;
+	std::cout << 0;
 }
