@@ -4,21 +4,25 @@
 
 int main()
 {
-	int N, titleNumber = 0, titleName = 666;
+	int N, titleNumber = 1, titleName = 666, temp;
 
 	std::cin >> N;
 
-	for (;;)
+	while (titleNumber != N)
 	{
-		if (std::to_string(titleName).find("666") != -1)
+		temp = ++titleName;
+
+		while (temp >= 666)
 		{
-			if (++titleNumber == N)
+			if (temp % 1000 == 666)
 			{
+				++titleNumber;
+
 				break;
 			}
-		}
 
-		++titleName;
+			temp /= 10;
+		}
 	}
 
 	std::cout << titleName;
