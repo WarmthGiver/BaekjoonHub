@@ -1,22 +1,2 @@
-#include <iostream>
-
-int main()
-{
-	int N, bagCount, temp;
-
-	std::cin >> N;
-
-	for (bagCount = N / 5; bagCount >= 0; --bagCount)
-	{
-		temp = N - bagCount * 5;
-
-		if (temp % 3 == 0)
-		{
-			std::cout << bagCount + temp / 3;
-
-			return 0;
-		}
-	}
-
-	std::cout << -1;
-}
+#import<iostream>
+int N,i;main(){for(std::cin>>N;N>0&&N%5;N-=3,++i);std::cout<<(N<0?-1:N/5+i);}
