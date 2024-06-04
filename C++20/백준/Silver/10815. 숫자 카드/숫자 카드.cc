@@ -1,6 +1,6 @@
 #include <iostream>
 
-#include <set>
+#include <bitset>
 
 int main()
 {
@@ -8,7 +8,9 @@ int main()
 
 	int N, M, card;
 
-	std::set<int> cards;
+	const int MAX(10000000);
+
+	std::bitset<MAX * 2 + 1> cards;
 
 	std::cin >> N;
 
@@ -16,7 +18,7 @@ int main()
 	{
 		std::cin >> card;
 
-		cards.insert(card);
+		cards.set(card + MAX);
 	}
 
 	std::cin >> M;
@@ -25,6 +27,6 @@ int main()
 	{
 		std::cin >> card;
 
-		std::cout << (cards.find(card) != cards.end()) << ' ';
+		std::cout << cards.test(card + MAX) << ' ';
 	}
 }
