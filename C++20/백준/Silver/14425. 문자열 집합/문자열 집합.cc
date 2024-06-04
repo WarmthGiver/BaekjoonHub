@@ -1,6 +1,6 @@
 #include <iostream>
 
-#include <set>
+#include <unordered_set>
 
 int main()
 {
@@ -12,7 +12,7 @@ int main()
 
 	std::string inputString;
 
-	std::set<std::string> S;
+	std::unordered_set<std::string> S;
 
 	while (N--)
 	{
@@ -25,7 +25,7 @@ int main()
 	{
 		std::cin >> inputString;
 
-		intersectionCount += S.find(inputString) != S.end();
+		intersectionCount += S.count(inputString);
 	}
 
 	std::cout << intersectionCount;
