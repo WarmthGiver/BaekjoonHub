@@ -1,2 +1,2 @@
 #import<bits/stdc++.h>
-using namespace std;int N,M,i;main(){cin>>N>>M;string s;map<string,int>S;for(N+=M;N--&&cin>>s;N<M?i+=S[s]:S[s]=1);cout<<i;}
+using namespace std;int N,i;main(){string s;map<string,int>S;for(cin>>N;cin>>s;N--<0?i+=S[s]:S[s]=1);cout<<i;}
