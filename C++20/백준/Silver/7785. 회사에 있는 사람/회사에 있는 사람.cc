@@ -12,22 +12,22 @@ int main()
 
 	cin >> n;
 
-	string user, status;
+	string userName, userStatus;
 
-	map<string, string, greater<string>> accessLogs;
+	map<string, bool, greater<string>> accessUsers;
 
 	while (n--)
 	{
-		cin >> user >> status;
+		cin >> userName >> userStatus;
 
-		accessLogs[user] = status;
+		accessUsers[userName] = userStatus[0] == 'e';
 	}
 
-	for (auto accessLog : accessLogs)
+	for (auto accessUser : accessUsers)
 	{
-		if (accessLog.second == "enter")
+		if (accessUser.second)
 		{
-			cout << accessLog.first << '\n';
+			cout << accessUser.first << '\n';
 		}
 	}
 }
