@@ -4,7 +4,7 @@ using namespace std;
 
 const int CARD_MAX(10000000);
 
-int cards[CARD_MAX << 1 + 1];
+int cards[CARD_MAX * 2 + 1];
 
 int main()
 {
