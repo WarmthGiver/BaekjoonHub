@@ -1,10 +1,10 @@
 #include <iostream>
 
-#include <unordered_map>
-
 using namespace std;
 
-unordered_map<int, int> cards;
+const int CARD_MAX(10000000);
+
+int cards[CARD_MAX << 1 + 1];
 
 int main()
 {
@@ -14,13 +14,11 @@ int main()
 
 	cin >> N;
 
-	cards.reserve(N << 1 + 1);
-
 	while (N--)
 	{
 		cin >> card;
 
-		++cards[card];
+		++cards[card + CARD_MAX];
 	}
 
 	cin >> N;
@@ -29,6 +27,6 @@ int main()
 	{
 		cin >> card;
 
-		cout << cards[card] << ' ';
+		cout << cards[card + CARD_MAX] << ' ';
 	}
 }
