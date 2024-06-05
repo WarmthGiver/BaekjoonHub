@@ -2,13 +2,13 @@
 
 using namespace std;
 
-class Deque
+class MyDeque
 {
 private:
 
-	int datas[2000002];
-	
-	int size = 0, front = 1000001, back = 1000000;
+	int datas[2000000];
+
+	int size{ 0 }, front{ 1000000 }, back{ 999999 };
 
 public:
 
@@ -79,67 +79,67 @@ int main()
 
 	cout.tie(0);
 
-	Deque d;
+	int N, X;
 
-	int n, x;
+	MyDeque myDeque;
 
-	char c;
+	char command;
 
-	for (cin >> n; n--;)
+	for (cin >> N; N--;)
 	{
-		cin >> c;
+		cin >> command;
 
-		switch (c)
+		switch (command)
 		{
 		case '1':
 
-			cin >> x;
+			cin >> X;
 
-			d.PushFront(x);
+			myDeque.PushFront(X);
 
 			break;
 
 		case '2':
 
-			cin >> x;
+			cin >> X;
 
-			d.PushBack(x);
+			myDeque.PushBack(X);
 
 			break;
 
 		case '3':
 
-			cout << d.PopFront() << '\n';
+			cout << myDeque.PopFront() << '\n';
 
 			break;
 
 		case '4':
 
-			cout << d.PopBack() << '\n';
+			cout << myDeque.PopBack() << '\n';
 
 			break;
 
 		case '5':
 
-			cout << d.Size() << '\n';
+			cout << myDeque.Size() << '\n';
 
 			break;
 
 		case '6':
 
-			cout << d.Empty() << '\n';
+			cout << myDeque.Empty() << '\n';
 
 			break;
 
 		case '7':
 
-			cout << d.Front() << '\n';
+			cout << myDeque.Front() << '\n';
 
 			break;
 
 		case '8':
 
-			cout << d.Back() << '\n';
+			cout << myDeque.Back() << '\n';
 
 			break;
 		}
