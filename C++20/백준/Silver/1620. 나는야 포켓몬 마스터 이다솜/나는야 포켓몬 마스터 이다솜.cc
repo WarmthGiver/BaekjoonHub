@@ -1,12 +1,16 @@
 #include <iostream>
 
-#include <string>
-
 #include <unordered_map>
+
+#include <string>
 
 #include <vector>
 
 using namespace std;
+
+vector<string> pokemons;
+
+unordered_map<string, int> pokedex;
 
 int main()
 {
@@ -16,11 +20,11 @@ int main()
 
 	cin >> N >> M;
 
+	pokemons.reserve(N + 1);
+
+	pokedex.reserve(N);
+
 	string pokemon;
-
-	vector<string> pokemons(N + 1);
-
-	unordered_map<string, int> pokedex;
 
 	while (i++ < N)
 	{
