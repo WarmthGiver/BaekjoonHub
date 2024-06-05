@@ -2,75 +2,6 @@
 
 using namespace std;
 
-class MyDeque
-{
-private:
-
-	int datas[2000000];
-
-	int size{ 0 }, front{ 1000000 }, back{ 999999 };
-
-public:
-
-	void PushFront(int data)
-	{
-		++size;
-
-		datas[--front] = data;
-	}
-
-	void PushBack(int data)
-	{
-		++size;
-
-		datas[++back] = data;
-	}
-
-	int PopFront()
-	{
-		if (size)
-		{
-			--size;
-
-			return datas[front++];
-		}
-
-		return -1;
-	}
-
-	int PopBack()
-	{
-		if (size)
-		{
-			--size;
-
-			return datas[back--];
-		}
-
-		return -1;
-	}
-
-	int Size()
-	{
-		return size;
-	}
-
-	bool Empty()
-	{
-		return !size;
-	}
-
-	int Front()
-	{
-		return size ? datas[front] : -1;
-	}
-
-	int Back()
-	{
-		return size ? datas[back] : -1;
-	}
-};
-
 int main()
 {
 	ios::sync_with_stdio(0);
@@ -79,13 +10,13 @@ int main()
 
 	cout.tie(0);
 
-	int N, X;
+	int N, datas[2000000], size{ 0 }, front{ 1000000 }, back{ 999999 };
 
-	MyDeque myDeque;
+	cin >> N;
 
 	char command;
 
-	for (cin >> N; N--;)
+	while (N--)
 	{
 		cin >> command;
 
@@ -93,53 +24,73 @@ int main()
 		{
 		case '1':
 
-			cin >> X;
+			++size;
 
-			myDeque.PushFront(X);
+			cin >> datas[--front];
 
 			break;
 
 		case '2':
 
-			cin >> X;
+			++size;
 
-			myDeque.PushBack(X);
+			cin >> datas[++back];
 
 			break;
 
 		case '3':
 
-			cout << myDeque.PopFront() << '\n';
+			if (size)
+			{
+				--size;
+
+				cout << datas[front++] << '\n';
+			}
+
+			else
+			{
+				cout << -1 << '\n';
+			}
 
 			break;
 
 		case '4':
 
-			cout << myDeque.PopBack() << '\n';
+			if (size)
+			{
+				--size;
+
+				cout << datas[back--] << '\n';
+			}
+
+			else
+			{
+				cout << -1 << '\n';
+			}
 
 			break;
 
 		case '5':
 
-			cout << myDeque.Size() << '\n';
+			cout << size << '\n';
 
 			break;
 
 		case '6':
 
-			cout << myDeque.Empty() << '\n';
+			cout << !size << '\n';
 
 			break;
 
 		case '7':
 
-			cout << myDeque.Front() << '\n';
+			cout << (size ? datas[front] : -1) << '\n';
 
 			break;
 
 		case '8':
 
-			cout << myDeque.Back() << '\n';
+			cout << (size ? datas[back] : -1) << '\n';
 
 			break;
 		}
