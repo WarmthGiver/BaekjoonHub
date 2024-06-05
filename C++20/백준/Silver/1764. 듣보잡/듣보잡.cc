@@ -1,8 +1,8 @@
+#include <algorithm>
+
 #include <iostream>
 
-#include <unordered_set>
-
-#include <set>
+#include <vector>
 
 using namespace std;
 
@@ -18,33 +18,37 @@ int main()
 
 	cin >> N >> M;
 
-	string inputString;
-
-	unordered_set<string> S(N);
-
-	set<string> deutbojabs;
+	vector<string> neverHeards(N);
 
 	while (N--)
 	{
-		cin >> inputString;
-
-		S.insert(inputString);
+		cin >> neverHeards[N];
 	}
+
+	sort(neverHeards.begin(), neverHeards.end());
+
+	string neverSeen;
+
+	vector<string> neverHeardNeverSeens;
+
+	neverHeardNeverSeens.reserve(M);
 
 	while (M--)
 	{
-		cin >> inputString;
+		cin >> neverSeen;
 
-		if (S.count(inputString))
+		if (binary_search(neverHeards.begin(), neverHeards.end(), neverSeen))
 		{
-			deutbojabs.insert(inputString);
+			neverHeardNeverSeens.push_back(neverSeen);
 		}
 	}
 
-	cout << deutbojabs.size() << '\n';
+	sort(neverHeardNeverSeens.begin(), neverHeardNeverSeens.end());
 
-	for (auto deutbojab : deutbojabs)
+	cout << neverHeardNeverSeens.size() << '\n';
+
+	for (auto neverHeardNeverSeen : neverHeardNeverSeens)
 	{
-		cout << deutbojab << '\n';
+		cout << neverHeardNeverSeen << '\n';
 	}
 }
