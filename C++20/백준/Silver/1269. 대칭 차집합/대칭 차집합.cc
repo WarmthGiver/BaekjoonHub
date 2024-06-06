@@ -2,7 +2,7 @@
 
 #include <iostream>
 
-#include <unordered_set>
+#include <vector>
 
 using namespace std;
 
@@ -14,26 +14,26 @@ int main()
 
 	cout.tie(nullptr);
 
-	int ACount, BCount, differenceCount{}, n;
+	int ACount, BCount, differenceCount, n;
 
 	cin >> ACount >> BCount;
 
-	differenceCount += ACount + BCount;
+	differenceCount = ACount + BCount;
 
-	unordered_set<int> A(ACount);
+	vector<int> A(ACount);
 
 	while (ACount--)
 	{
-		cin >> n;
-
-		A.insert(n);
+		cin >> A[ACount];
 	}
+
+	sort(A.begin(), A.end());
 
 	while (BCount--)
 	{
 		cin >> n;
 
-		if (A.count(n))
+		if (binary_search(A.begin(), A.end(), n))
 		{
 			differenceCount -= 2;
 		}
