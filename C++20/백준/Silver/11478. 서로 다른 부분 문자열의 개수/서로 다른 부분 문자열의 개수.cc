@@ -1,6 +1,6 @@
 #include <iostream>
 
-#include <set>
+#include <unordered_set>
 
 using namespace std;
 
@@ -12,25 +12,23 @@ int main()
 
 	cout.tie(nullptr);
 
-	string S, partialString;
+	string S;
 
 	cin >> S;
 
-	set<string> partialStrings;
+	int SSize(S.size()), partialStringCount{}, i, j;
 
-	int SSize(S.size());
-
-	for (int i = 0; i < SSize; ++i)
+	for (int i = 1; i <= SSize; ++i)
 	{
-		partialString.clear();
+		unordered_set<string> partialStrings;
 
-		for (int j = i; j < SSize; ++j)
+		for (int j = SSize - i; j >= 0 ; --j)
 		{
-			partialString += S[j];
-
-			partialStrings.insert(partialString);
+			partialStrings.insert(S.substr(j, i));
 		}
+
+		partialStringCount += partialStrings.size();
 	}
 
-	cout << partialStrings.size();
+	cout << partialStringCount;
 }
