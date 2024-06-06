@@ -12,19 +12,23 @@ int main()
 
 	cout.tie(nullptr);
 
-	string S;
+	string S, partialString;
 
 	cin >> S;
 
 	set<string> partialStrings;
 
-	int SSize(S.size()), i, j;
+	int SSize(S.size());
 
-	for (i = SSize; --i >= 0;)
+	for (int i = 0; i < SSize; ++i)
 	{
-		for (j = SSize - i; j > 0; --j)
+		partialString.clear();
+
+		for (int j = i; j < SSize; ++j)
 		{
-			partialStrings.insert(S.substr(i, j));
+			partialString += S[j];
+
+			partialStrings.insert(partialString);
 		}
 	}
 
