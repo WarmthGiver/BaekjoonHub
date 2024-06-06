@@ -2,8 +2,6 @@
 
 #include <iostream>
 
-#include <vector>
-
 using namespace std;
 
 int main()
@@ -14,26 +12,26 @@ int main()
 
 	cout.tie(nullptr);
 
-	int ACount, BCount, differenceCount, n;
+	int ACount, BCount, differenceCount, i, n;
 
 	cin >> ACount >> BCount;
 
 	differenceCount = ACount + BCount;
 
-	vector<int> A(ACount);
+	int A[ACount];
 
-	while (ACount--)
+	for (i = ACount; i--;)
 	{
-		cin >> A[ACount];
+		cin >> A[i];
 	}
 
-	sort(A.begin(), A.end());
+	sort(A, A + ACount);
 
 	while (BCount--)
 	{
 		cin >> n;
 
-		if (binary_search(A.begin(), A.end(), n))
+		if (binary_search(A, A + ACount, n))
 		{
 			differenceCount -= 2;
 		}
