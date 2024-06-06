@@ -18,11 +18,11 @@ int main()
 
 	int SSize(S.size()), partialStringCount{}, i, j;
 
-	for (int i = 1; i <= SSize; ++i)
+	for (i = SSize; i > 0 ; --i)
 	{
 		unordered_set<string> partialStrings;
 
-		for (int j = SSize - i; j >= 0 ; --j)
+		for (j = SSize - i; j >= 0 ; --j)
 		{
 			partialStrings.insert(S.substr(j, i));
 		}
