@@ -1,5 +1,3 @@
-#include <algorithm>
-
 #include <iostream>
 
 using namespace std;
@@ -10,15 +8,13 @@ int main()
 
 	cin.tie(nullptr);
 
-	cout.tie(nullptr);
-
-	int T, A, B, R, gcd;
+	int T, A, B, R, LCM;
 
 	for (cin >> T; --T >= 0;)
 	{
 		cin >> A >> B;
 
-		gcd = A * B;
+		LCM = A * B;
 
 		for (;;)
 		{
@@ -26,6 +22,8 @@ int main()
 
 			if (R == 0)
 			{
+				LCM /= B;
+
 				break;
 			}
 
@@ -34,6 +32,6 @@ int main()
 			B = R;
 		}
 
-		cout << gcd / B << '\n';
+		cout << LCM << '\n';
 	}
 }
