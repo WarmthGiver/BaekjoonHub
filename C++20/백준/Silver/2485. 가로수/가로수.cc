@@ -1,8 +1,4 @@
-#include <algorithm>
-
 #include <iostream>
-
-#include <vector>
 
 using namespace std;
 
@@ -24,27 +20,20 @@ int main()
 {
 	cin.tie(0)->sync_with_stdio(0);
 
-	int N, gcd, i;
+	int N, first, last, before, gcd, i;
 
-	cin >> N;
+	cin >> N >> first >> last;
 
-	vector<int> treeDistances(N);
+	gcd = last - first;
 
-	for (i = N; --i >= 0;)
+	for (i = N - 2; --i >= 0;)
 	{
-		cin >> treeDistances[i];
+		before = last;
+
+		cin >> last;
+
+		gcd = GCD(gcd, last - before);
 	}
 
-	sort(treeDistances.begin(), treeDistances.end());
-
-	i = N - 1;
-
-	gcd = treeDistances[i] - treeDistances[i - 1];
-
-	while (--i > 0)
-	{
-		gcd = GCD(gcd, treeDistances[i] - treeDistances[i - 1]);
-	}
-
-	cout << (treeDistances[N - 1] - treeDistances[0]) / gcd - N + 1;
+	cout << (last - first) / gcd - N + 1;
 }
