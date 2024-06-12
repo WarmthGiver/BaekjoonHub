@@ -1,10 +1,6 @@
 #include <iostream>
 
-#include <cmath>
-
-using namespace std;
-
-bool IsPrimeNumber(unsigned n)
+bool is_prime_number(unsigned n)
 {
 	if (n <= 1)
 	{
@@ -21,9 +17,7 @@ bool IsPrimeNumber(unsigned n)
 		return false;
 	}
 	
-	unsigned sqrt_n = sqrt(n);
-
-	for (int i = 5; i <= sqrt_n; i += 6)
+	for (unsigned i = 5; i * i <= n; i += 6)
 	{
 		if (n % i == 0 || n % (i + 2) == 0)
 		{
@@ -36,18 +30,18 @@ bool IsPrimeNumber(unsigned n)
 
 int main()
 {
-	cin.tie(0)->sync_with_stdio(0);
+	std::cin.tie(0)->sync_with_stdio(0);
 
 	int testCaseCount;
-	
-	unsigned n;
 
-	cin >> testCaseCount;
+	std::cin >> testCaseCount;
+
+	unsigned n;
 
 	while (--testCaseCount >= 0)
 	{
-		for (cin >> n; !IsPrimeNumber(n); ++n);
+		for (std::cin >> n; !is_prime_number(n); ++n);
 
-		cout << n << '\n';
+		std::cout << n << '\n';
 	}
 }
