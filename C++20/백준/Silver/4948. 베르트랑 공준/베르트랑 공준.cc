@@ -2,47 +2,45 @@
 
 #include <bitset>
 
-using namespace std;
+const int n_max(123456 * 2 + 1);
 
-const int N_MAX(123456 * 2 + 1);
+std::bitset<n_max> eratostheness_sieve;
 
-bitset<N_MAX> eratostheness_sieve;
-
-int primeNumberCounts[N_MAX];
+short prime_number_counts[n_max];
 
 int main()
 {
-	cin.tie(0)->sync_with_stdio(0);
+	std::cin.tie(0)->sync_with_stdio(0);
 
 	eratostheness_sieve.set(1);
 
-	for (int i = 2; i * i < N_MAX; ++i)
+	for (int i = 2; i * i < n_max; ++i)
 	{
 		if (eratostheness_sieve.test(i))
 		{
 			continue;
 		}
 
-		for (int j = i * i; j < N_MAX; j += i)
+		for (int j = i * i; j < n_max; j += i)
 		{
 			eratostheness_sieve.set(j);
 		}
 	}
 
-	int primeNumberCount(0);
+	int prime_number_count(0);
 
-	for (int i = 1; i < N_MAX; ++i)
+	for (int i = 1; i < n_max; ++i)
 	{
 		if (eratostheness_sieve.test(i) == 0)
 		{
-			++primeNumberCount;
+			++prime_number_count;
 		}
 
-		primeNumberCounts[i] = primeNumberCount;
+		prime_number_counts[i] = prime_number_count;
 	}
 
-	for (int N; cin >> N, N != 0;)
+	for (int n; std::cin >> n, n != 0;)
 	{
-		cout << primeNumberCounts[N * 2] - primeNumberCounts[N] << '\n';
+		std::cout << prime_number_counts[n * 2] - prime_number_counts[n] << '\n';
 	}
 }
