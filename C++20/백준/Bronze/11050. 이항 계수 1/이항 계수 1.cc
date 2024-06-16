@@ -1,20 +1,22 @@
 #include<iostream>
 
-int factorial(int n)
-{
-	int n_factorial(1);
-
-	while (n > 0)
-	{
-		n_factorial *= n--;
-	}
-
-	return n_factorial;
-}
-
 int binomial_oefficient(int n, int k)
 {
-	return factorial(n) / (factorial(k) * factorial(n - k));
+	if (k > n - k)
+	{
+		k = n - k;
+	}
+
+	int r(1);
+
+	for (int i(0); i < k; ++i)
+	{
+		r *= n - i;
+
+		r /= i + 1;
+	}
+
+	return r;
 }
 
 int main()
