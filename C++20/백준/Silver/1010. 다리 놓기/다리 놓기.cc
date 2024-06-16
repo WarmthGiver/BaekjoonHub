@@ -35,6 +35,8 @@ long long binomial_oefficient(int a, int b)
 
 int main()
 {
+	std::cin.tie(0)->sync_with_stdio(0);
+
 	int T;
 
 	std::cin >> T;
