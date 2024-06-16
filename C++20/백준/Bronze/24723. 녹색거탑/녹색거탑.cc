@@ -1,7 +1,5 @@
 #include<iostream>
 
-#include <cmath>
-
 int main()
 {
 	std::cin.tie(0)->sync_with_stdio(0);
@@ -10,5 +8,5 @@ int main()
 
 	std::cin >> N;
 
-	std::cout << pow(2, N);
+	std::cout << (1 << N);
 }
