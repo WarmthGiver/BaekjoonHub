@@ -2,11 +2,6 @@
 
 long long binomial_oefficient(int a, int b)
 {
-	if (a == b)
-	{
-		return 1;
-	}
-
 	if (a < b)
 	{
 		int t(a);
