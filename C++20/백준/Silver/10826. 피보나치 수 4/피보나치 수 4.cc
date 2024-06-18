@@ -2,23 +2,21 @@
 
 #include <iomanip>
 
-#include <vector>
-
 using namespace std;
 
-vector<int> fibonacci(short n)
+void fibonacci(short n)
 {
-	vector<int> current{ 0 }, current_old, increment{ 1 };
+	const int size_max(233), carry_max(1000000000);
 
-	const int carry_max(1000000000);
+	int current[size_max]{ 0 }, current_old[size_max], increment[size_max]{ 1 }, size(1);
 
 	while (--n >= 0)
 	{
-		current_old = current;
+		copy(current, current + size, current_old);
 
-		int current_size(current.size()), carry(0);
+		int carry(0);
 
-		for (int i = 0; i < current_size; ++i)
+		for (int i = 0; i < size; ++i)
 		{
 			current[i] += increment[i] + carry;
 
@@ -27,17 +25,24 @@ vector<int> fibonacci(short n)
 			current[i] %= carry_max;
 		}
 
-		increment = current_old;
+		copy(current_old, current_old + size, increment);
 
 		if (carry > 0)
 		{
-			current.push_back(carry);
+			current[size] = carry;
 
-			increment.push_back(0);
+			increment[size] = 0;
+
+			++size;
 		}
 	}
 
-	return current;
+	cout << current[--size];
+
+	while (--size >= 0)
+	{
+		cout << setfill('0') << setw(9) << current[size];
+	}
 }
 
 int main()
@@ -48,14 +53,5 @@ int main()
 
 	cin >> N;
 
-	vector<int> fibonacci_N = fibonacci(N);
-
-	int i = fibonacci_N.size() - 1;
-
-	cout << fibonacci_N[i];
-
-	while (--i >= 0)
-	{
-		cout << setfill('0') << setw(9) << fibonacci_N[i];
-	}
+	fibonacci(N);
 }
