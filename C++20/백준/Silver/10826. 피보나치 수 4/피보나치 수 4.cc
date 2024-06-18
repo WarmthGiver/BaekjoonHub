@@ -4,7 +4,7 @@
 
 using namespace std;
 
-vector<short> fibonacci(short n)
+void fibonacci(short n)
 {
 	vector<short> current{ 0 }, current_old, increment{ 1 };
 
@@ -35,7 +35,10 @@ vector<short> fibonacci(short n)
 		}
 	}
 
-	return current;
+	for (int i = current.size(); --i >= 0;)
+	{
+		cout << current[i];
+	}
 }
 
 int main()
@@ -46,10 +49,5 @@ int main()
 
 	cin >> N;
 
-	vector<short> fibonacci_N = fibonacci(N);
-
-	for (int i = fibonacci_N.size(); --i >= 0;)
-	{
-		cout << fibonacci_N[i];
-	}
+	fibonacci(N);
 }
