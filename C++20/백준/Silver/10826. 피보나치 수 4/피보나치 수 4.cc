@@ -10,11 +10,11 @@ vector<short> fibonacci(short n)
 
 	while (--n >= 0)
 	{
-		current_old = current;
-
 		int current_size(current.size());
 		
 		bool carry(0);
+
+		current_old = current;
 
 		for (int i = 0; i < current_size; ++i)
 		{
@@ -29,14 +29,10 @@ vector<short> fibonacci(short n)
 
 		if (carry)
 		{
-			current.reserve(current_size + 1);
-
 			current.push_back(1);
 
-			increment.reserve(current_size + 1);
-
 			increment.push_back(0);
-		};
+		}
 	}
 
 	return current;
