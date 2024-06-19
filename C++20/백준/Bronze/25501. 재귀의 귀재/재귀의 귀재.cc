@@ -1,42 +1,48 @@
 #include <iostream>
 
+#include <string.h>
+
 using namespace std;
+
+pair<bool, int> recursion(const char *s, int l, int r)
+{
+	if (l >= r)
+	{
+		return { 1, l + 1 };
+	}
+
+	else if (s[l] != s[r])
+	{
+		return { 0, l + 1 };
+	}
+
+	else
+	{
+		return recursion(s, l + 1, r - 1);
+	}
+}
+
+pair<bool, int> isPalindrome(const char *s)
+{
+	return recursion(s, 0, strlen(s) - 1);
+}
 
 int main()
 {
-	cin.tie(0)->sync_with_stdio(0);
+	std::cin.tie(0)->sync_with_stdio(0);
 
 	int T;
 
-	cin >> T;
+	std::cin >> T;
 
 	while (--T >= 0)
 	{
-		string S;
+		char S[1001];
 
 		cin >> S;
 
-		int loopCount = 0;
+		auto result = isPalindrome(S);
 
-		for (int i = 0, j = S.length() - 1;; ++i, --j)
-		{
-			++loopCount;
-
-			if (i >= j)
-			{
-				cout << 1;
-
-				break;
-			}
-
-			if (S[i] != S[j])
-			{
-				cout << 0;
-
-				break;
-			}
-		}
-
-		cout << ' ' << loopCount << '\n';
+		cout << result.first << ' ' << result.second << '\n';
 	}
 }
