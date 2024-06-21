@@ -60,6 +60,8 @@ void merge_sort(int A[], int p, int r)
 
 int main()
 {
+    std::cin.tie(0)->sync_with_stdio(0);
+
     std::cin >> N >> K;
 
     A = new int[N + 1];
