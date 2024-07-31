@@ -4,16 +4,14 @@ using namespace std;
 
 vector<int> solution(int n, int s)
 {
-    vector<int> answer(n, s / n);
-    
     if (n > s)
     {
         return {-1};
     }
     
-    int remain(s % n);
+    vector<int> answer(n, s / n);
     
-    for (int i(n - remain); i < n; ++i)
+    for (int i(n - s % n); i < n; ++i)
     {
         ++answer[i];
     }
