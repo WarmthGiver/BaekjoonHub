@@ -6,7 +6,7 @@ using namespace std;
 
 int solution(vector<int> bandage, int health, vector<vector<int>> attacks)
 {
-    int currnet_health = health;
+    const int health_max = health;
     
     int attacks_size = attacks.size(), time = 0;
     
@@ -14,21 +14,21 @@ int solution(vector<int> bandage, int health, vector<vector<int>> attacks)
     {
         time = attacks[i][0] - time - 1;
         
-        currnet_health += bandage[1] * time;
+        health += bandage[1] * time;
         
         if (bandage[0] <= time)
         {
-            currnet_health += time / bandage[0] * bandage[2];
+            health += time / bandage[0] * bandage[2];
         }
         
-        if (currnet_health > health)
+        if (health > health_max)
         {
-            currnet_health = health;
+            health = health_max;
         }
         
-        currnet_health -= attacks[i][1];
+        health -= attacks[i][1];
         
-        if (currnet_health <= 0)
+        if (health <= 0)
         {
             return -1;
         }
@@ -36,5 +36,5 @@ int solution(vector<int> bandage, int health, vector<vector<int>> attacks)
         time = attacks[i][0];
     }
     
-    return currnet_health;
+    return health;
 }
