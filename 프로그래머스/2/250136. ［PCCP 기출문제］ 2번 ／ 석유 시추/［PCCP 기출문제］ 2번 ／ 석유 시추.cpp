@@ -10,15 +10,13 @@ using namespace std;
 
 int solution(vector<vector<int>> land)
 {
-    int y_max = land.size() - 1, x_max = land[0].size() - 1;
+    const int y_max = land.size() - 1, x_max = land[0].size() - 1;
 
     stack<pair<int, int>> nodes;
 
-    vector<int> oils(x_max + 1, 0);
-
     auto check_oil = [&](int y, int x) -> bool
     {
-        if (land[y][x])
+        if (land[y][x] == 1)
         {
             land[y][x] = 0;
 
@@ -29,6 +27,8 @@ int solution(vector<vector<int>> land)
 
         return false;
     };
+
+    vector<int> oils(x_max + 1, 0);
 
     for (int y = 0; y <= y_max; ++y)
     {
