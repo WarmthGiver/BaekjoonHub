@@ -1,64 +1,80 @@
+#include <algorithm>
+
+#include <stack>
+
 #include <utility>
 
 #include <vector>
 
 using namespace std;
 
-int n, m;
-
-bool find_oil(vector<vector<int>>& land, int y, int x, int& oil, pair<int, int>& x_range)
-{
-    if (y < 0 || y >= n || x < 0 || x >= m || land[y][x] == 0)
-    {
-        return false;
-    }
-
-    land[y][x] = 0;
-
-    ++oil;
-
-    find_oil(land, y - 1, x, oil, x_range);
-
-    find_oil(land, y + 1, x, oil, x_range);
-
-    if (find_oil(land, y, x - 1, oil, x_range))
-    {
-        if (x_range.first > x - 1)
-        {
-            x_range.first = x - 1;
-        }
-    }
-
-    if (find_oil(land, y, x + 1, oil, x_range))
-    {
-        if (x_range.second < x + 1)
-        {
-            x_range.second = x + 1;
-        }
-    }
-
-    return true;
-}
-
 int solution(vector<vector<int>> land)
 {
-    int answer = 0;
+    int y_max = land.size() - 1, x_max = land[0].size() - 1;
 
-    n = land.size(), m = land[0].size();
+    stack<pair<int, int>> nodes;
 
-    vector<int> oils(m, 0);
+    vector<int> oils(x_max + 1, 0);
 
-    for (int y = 0; y < n; ++y)
+    auto check_oil = [&](int y, int x) -> bool
     {
-        for (int x = 0; x < m; ++x)
+        if (land[y][x])
         {
-            int oil = 0;
+            land[y][x] = 0;
 
-            pair<int, int> x_range(x, x);
+            nodes.push({ y, x });
 
-            if (find_oil(land, y, x, oil, x_range))
+            return true;
+        }
+
+        return false;
+    };
+
+    for (int y = 0; y <= y_max; ++y)
+    {
+        for (int x = 0; x <= x_max; ++x)
+        {
+            if (check_oil(y, x))
             {
-                for (int i = x_range.first; i <= x_range.second; ++i)
+                int oil = 0, x_range_min = x, x_range_max = x;
+
+                do
+                {
+                    auto [node_y, node_x] = nodes.top();
+
+                    nodes.pop();
+
+                    ++oil;
+
+                    if (node_y > 0)
+                    {
+                        check_oil(node_y - 1, node_x);
+                    }
+
+                    if (node_y < y_max)
+                    {
+                        check_oil(node_y + 1, node_x);
+                    }
+
+                    if (node_x > 0)
+                    {
+                        if (check_oil(node_y, node_x - 1) && x_range_min > node_x - 1)
+                        {
+                            x_range_min = node_x - 1;
+                        }
+                    }
+
+                    if (node_x < x_max)
+                    {
+                        if (check_oil(node_y, node_x + 1) && x_range_max < node_x + 1)
+                        {
+                            x_range_max = node_x + 1;
+                        }
+                    }
+                }
+                while (nodes.size());
+
+                for (int i = x_range_min; i <= x_range_max; ++i)
                 {
                     oils[i] += oil;
                 }
@@ -66,13 +82,5 @@ int solution(vector<vector<int>> land)
         }
     }
 
-    for (int i = 0; i < m; ++i)
-    {
-        if (answer < oils[i])
-        {
-            answer = oils[i];
-        }
-    }
-
-    return answer;
+    return *max_element(oils.begin(), oils.end());
 }
