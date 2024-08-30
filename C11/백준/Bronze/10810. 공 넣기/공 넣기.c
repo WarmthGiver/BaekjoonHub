@@ -1,1 +1,0 @@
-N,M,i,j,k,l,b[101];main(){scanf("%d%d",&N,&M);while(M--&&scanf("%d%d%d",&i,&j,&k))while(i<=j)b[i++]=k;while(l++<N)printf("%d ",b[l]);}

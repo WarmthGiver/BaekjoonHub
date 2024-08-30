@@ -1,1 +1,0 @@
-int N,v,a[201];main(){scanf("%d%d",&N,&v);while(N--){++a[v+100];scanf("%d",&v);}printf("%d",a[v+100]);}

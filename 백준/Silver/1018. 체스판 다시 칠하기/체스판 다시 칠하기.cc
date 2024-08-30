@@ -1,0 +1,2 @@
+#import<iostream>
+main(){int N,M,sum,min=32,i,j,k,l;std::cin>>N>>M;char board[N][M];for(i=0;i<N;++i)for(j=0;j<M;++j)std::cin>>board[i][j];for(i=7;i<N;++i)for(j=7;j<M;++j,sum=sum>32?64-sum:sum,min=sum<min?sum:min)for(sum=0,k=i-7;k<=i;++k)for(l=j-7;l<=j;++l)if(board[k][l]=='W'==(k+l)%2)++sum;std::cout<<min;}

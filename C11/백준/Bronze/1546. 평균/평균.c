@@ -1,1 +1,0 @@
-N,i,s,x,m;main(){scanf("%d",&N);while(i++<N)if(scanf("%d",&s),m+=s,s>x)x=s;printf("%f",100.*m/N/x);}

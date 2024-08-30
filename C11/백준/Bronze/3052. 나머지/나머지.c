@@ -1,1 +1,0 @@
-i,n,r[42],c;main(){while(i++<10)if(scanf("%d",&n),!r[n%42]++)++c;printf("%d",c);}

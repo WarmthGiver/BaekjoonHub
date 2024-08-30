@@ -1,1 +1,0 @@
-main(){int N,n,m=1000000,x=-m;scanf("%d",&N);while(N--){scanf("%d",&n);if(n<m)m=n;if(n>x)x=n;}printf("%d %d",m,x);}
