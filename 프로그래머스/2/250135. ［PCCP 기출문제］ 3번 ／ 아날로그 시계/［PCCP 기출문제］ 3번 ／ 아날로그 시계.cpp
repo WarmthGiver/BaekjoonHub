@@ -18,7 +18,7 @@ int solution(int h1, int m1, int s1, int h2, int m2, int s2)
         --answer;
     }
     
-    if (start % 3600 == 0 || start % 43200 == 0)
+    if (start % 3600 == 0)
     {
         ++answer;
     }
