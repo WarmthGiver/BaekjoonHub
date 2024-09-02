@@ -10,11 +10,9 @@ int solution(int h1, int m1, int s1, int h2, int m2, int s2)
     
     if (end >= 43200)
     {
-        --answer;
-        
-        if (start >= 43200)
+        if (start < 43200)
         {
-            ++answer;
+            --answer;
         }
     }
     
