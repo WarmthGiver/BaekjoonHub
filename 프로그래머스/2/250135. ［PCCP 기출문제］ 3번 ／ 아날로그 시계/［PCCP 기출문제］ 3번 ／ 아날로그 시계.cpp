@@ -8,12 +8,9 @@ int solution(int h1, int m1, int s1, int h2, int m2, int s2)
     
     int answer = end * 59 / 3600 + end * 719 / 43200 - start * 59 / 3600 - start * 719 / 43200;
     
-    if (end >= 43200)
+    if (start < 43200 && end >= 43200)
     {
-        if (start < 43200)
-        {
-            --answer;
-        }
+        --answer;
     }
     
     if (start % 3600 == 0)
